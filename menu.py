@@ -1,4 +1,7 @@
 from akun import AkunSiswa, AkunKantin
+from cetak_n_hitung import cetak_riwayat
+
+kantin = AkunKantin("Kantin SMK", 100000)
 
 def main():
     while True:
@@ -12,14 +15,14 @@ def main():
         match pilihan:
             case "1":
                 print("\n===Login Akun Siswa===")
-                nama = input("Masukkan nama siswa: ")
-                kelas = input("Masukkan kelas siswa: ")
+                nama = input("Nama Siswa: ")
+                kelas = input("Kelas: ")
+                akun_siswa = AkunSiswa(nama, kelas, 0)
+                menu_akun_siswa (akun_siswa, kantin)
                 print(f"\nLogin berhasil sebagai {nama} dari kelas {kelas}.")
 
             case "2":
-                print("\n===Login Akun Kantin===")
-                nama_toko = input("Masukkan nama toko: ")
-                print(f"\nLogin berhasil sebagai {nama_toko}.")
+                menu_akun_kantin(kantin)
             
             case "3":
                 print("Terima kasih telah menggunakan E-SMK Pay. Sampai jumpa!")
@@ -33,7 +36,8 @@ def menu_akun_siswa(akun_siswa, akun_kantin):
         print("1. Cek saldo")
         print("2. Deposit saldo")
         print("3. Bayar ke kantin")
-        print("4. Keluar")
+        print("4. Riwayat transaksi")
+        print("5. Logout")
 
         pilihan = input("Pilih Menu: ")
         
@@ -47,7 +51,9 @@ def menu_akun_siswa(akun_siswa, akun_kantin):
                 jumlah = int(input("Masukkan jumlah pembayaran: "))
                 akun_siswa.bayar(akun_kantin, jumlah)
             case "4":
-                print("Kembali ke menu utama.")
+                cetak_riwayat(akun_siswa)
+            case "5":
+                print("Logout berhasil. Kembali ke menu utama.")
                 break
             case _:
                 print("Pilihan tidak valid. Silakan pilih menu yang tersedia.")
@@ -56,7 +62,8 @@ def menu_akun_kantin(akun_kantin):
     while True:
         print("\n===Menu Akun Kantin===")
         print("1. Cek saldo")
-        print("2. Keluar")
+        print("2. Riwayat transaksi")
+        print("3. Logout")
 
         pilihan = input("Pilih Menu: ")
         
@@ -64,7 +71,9 @@ def menu_akun_kantin(akun_kantin):
             case "1":
                 print(f"Saldo kantin saat ini: {akun_kantin.get_saldo()}")
             case "2":
-                print("Kembali ke menu utama.")
+                cetak_riwayat(akun_kantin)
+            case "3":
+                print("Logout berhasil. Kembali ke menu utama.")
                 break
             case _:
                 print("Pilihan tidak valid. Silakan pilih menu yang tersedia.")

@@ -1,6 +1,8 @@
 from akun import AkunSiswa, AkunKantin
 from cetak_n_hitung import cetak_riwayat, hitung_saldo
-from menu import main, menu_akun_siswa, menu_akun_kantin
+from menu import main
+
+main()
 
 siswa = AkunSiswa("Budi", "10A", 50000)
 kantin = AkunKantin("Kantin SMK", 100000)
