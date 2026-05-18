@@ -1,9 +1,10 @@
 from akun import AkunSiswa, AkunKantin
 from cetak_n_hitung import cetak_riwayat
 
+PASSWORD="1234"
 kantin = AkunKantin("Kantin SMK", 100000)
 
-def main():
+def main(kantin):
     while True:
         print("\n===Menu E-SMK Pay===")
         print("1. Login akun siswa")
@@ -17,12 +18,26 @@ def main():
                 print("\n===Login Akun Siswa===")
                 nama = input("Nama Siswa: ")
                 kelas = input("Kelas: ")
+                password= input("Masukkan password: ")
+                if password != PASSWORD:
+                    print("Password salah. Login gagal.")
+                    continue
                 akun_siswa = AkunSiswa(nama, kelas, 0)
                 menu_akun_siswa (akun_siswa, kantin)
                 print(f"\nLogin berhasil sebagai {nama} dari kelas {kelas}.")
 
             case "2":
-                menu_akun_kantin(kantin)
+                print("\n===Login Akun Kantin===")
+                nama_kantin = input("Nama Kantin: ")
+                password= input("Masukkan password: ")
+                if password != PASSWORD:
+                    print("Password salah. Login gagal.")
+                    continue
+                if nama_kantin == kantin.nama:
+                    print(f"\nLogin berhasil sebagai {nama_kantin}.")
+                    menu_akun_kantin(kantin)
+                else:
+                    print("Login gagal. Nama kantin tidak valid.")
             
             case "3":
                 print("Terima kasih telah menggunakan E-SMK Pay. Sampai jumpa!")
