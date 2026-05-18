@@ -9,5 +9,15 @@ class Akun(ABC):
     def set_saldo(self, jumlah):
         pass
     
+    @abstractmethod
     def keluar_saldo(self, jumlah):
+        pass
+    
+class Menu_c(ABC):
+    def __init__(self):
+        self._pass_siswa = "123123"
+        self._pass_kantin = "321321"
+        
+    @abstractmethod
+    def menu(self):
         pass
