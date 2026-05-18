@@ -3,7 +3,11 @@ from syarat import Menu_c
 from cetak_n_hitung import cetak_riwayat
 
 class Menu(Menu_c):
+<<<<<<< HEAD
     def menu(self):
+=======
+    def menu_utama(self):
+>>>>>>> 199b775bb01fb4788cf87dc3cfb167d31d3b6031
         while True:
             print("\n===Menu E-SMK Pay===")
             print("1. Login akun siswa")
@@ -149,6 +153,29 @@ class MenuAkunSiswa(Menu_c):
 #                 break
 #             case _:
 #                 print("Pilihan tidak valid. Silakan pilih menu yang tersedia.")
+<<<<<<< HEAD
+=======
+
+# def menu_akun_kantin(akun_kantin):
+#     while True:
+#         print("\n===Menu Akun Kantin===")
+#         print("1. Cek saldo")
+#         print("2. Riwayat transaksi")
+#         print("3. Logout")
+
+#         pilihan = input("Pilih Menu: ")
+        
+#         match pilihan:
+#             case "1":
+#                 print(f"Saldo kantin saat ini: {akun_kantin.get_saldo()}")
+#             case "2":
+#                 cetak_riwayat(akun_kantin)
+#             case "3":
+#                 print("Logout berhasil. Kembali ke menu utama.")
+#                 break
+#             case _:
+#                 print("Pilihan tidak valid. Silakan pilih menu yang tersedia.")
+>>>>>>> 199b775bb01fb4788cf87dc3cfb167d31d3b6031
 
 # def menu_akun_kantin(akun_kantin):
 #     while True:
