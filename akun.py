@@ -47,7 +47,7 @@ class AkunSiswa(Akun):
             
 class AkunKantin(Akun):
     def __init__ (self, nama_toko, saldo):
-        self.nama = nama_toko
+        self.nama = nama_toko 
         self.__saldo = saldo
         self._riwayat = []
         self.__saldo_awal = saldo
