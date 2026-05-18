@@ -23,7 +23,7 @@ class Menu(Menu_c):
                         continue
                     akun_siswa = AkunSiswa(nama, kelas, 0)
                     print(f"\nLogin berhasil sebagai {nama} dari kelas {kelas}.")
-                    self.menu_akun(akun_siswa)
+                    MenuAkunSiswa().menu_akun(akun_siswa)
                     
                 case "2":
                     print("\n===Login Akun Kantin===")
@@ -33,7 +33,7 @@ class Menu(Menu_c):
                         print("Password salah. Silakan coba lagi.")
                         continue
                     kantin = AkunKantin(nama_toko, 0)
-                    self.menu_akun(kantin)
+                    MenuAkunKantin().menu_akun(kantin)
                 
                 case "3":
                     print("Terima kasih telah menggunakan E-SMK Pay. Sampai jumpa!")
