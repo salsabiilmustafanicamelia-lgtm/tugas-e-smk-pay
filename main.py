@@ -1,5 +1,5 @@
-from menu import Menu, MenuAkunKantin, MenuAkunSiswa
-from syarat import Menu_c
+from esmkpay.menu import Menu, MenuAkunKantin, MenuAkunSiswa
+from esmkpay.syarat import Menu_c
 
 print("==========================================")
 print("            SELAMAT DATANG                ")
