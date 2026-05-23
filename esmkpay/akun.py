@@ -14,7 +14,7 @@ class AkunSiswa(Akun):
         return self.__saldo
     
     def set_saldo(self, jumlah):
-        if self.__saldo + jumlah <= MAX_SALDO_SISWA:
+        if self.__saldo + jumlah <= MAX_SALDO_SISWA and jumlah > 0:
             self.__saldo += jumlah
             self._riwayat.append(f"Deposit: \t+{jumlah}")
             self.list_transaksi.append(f"+ \t{jumlah}")
